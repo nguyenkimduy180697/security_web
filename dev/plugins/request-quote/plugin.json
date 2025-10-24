@@ -1,0 +1,14 @@
+{
+    "id": "dev/request-quote",
+    "name": "Request Quote",
+    "namespace": "Dev\\RequestQuote\\",
+    "provider": "Dev\\RequestQuote\\Providers\\RequestQuoteServiceProvider",
+    "author": "Laravel Technologies",
+    "url": "mailto:toan@visualweber.com",
+    "version": "1.0.1",
+    "description": "Add request quote functionality to products",
+    "minimum_core_version": "7.5.0",
+    "require": [
+        "dev/ecommerce"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "id": "platform/toc",
+    "name": "Table of Content",
+    "namespace": "Dev\\ToC\\",
+    "provider": "Dev\\ToC\\Providers\\ToCServiceProvider",
+    "author": "Laravel Technologies",
+    "url": "mailto:toan@visualweber.com",
+    "version": "2.2.2",
+    "description": "Plugin allows you to insert a table of contents into your posts, pages and custom post types."
+}

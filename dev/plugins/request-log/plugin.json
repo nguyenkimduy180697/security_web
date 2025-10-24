@@ -1,0 +1,11 @@
+{
+    "id": "dev/request-log",
+    "name": "Request Log",
+    "namespace": "Dev\\RequestLog\\",
+    "provider": "Dev\\RequestLog\\Providers\\RequestLogServiceProvider",
+    "author": "Laravel Technologies",
+    "url": "mailto:toan@visualweber.com",
+    "version": "2.0.7",
+    "description": "Log error requests",
+    "minimum_core_version": "7.3.0"
+}

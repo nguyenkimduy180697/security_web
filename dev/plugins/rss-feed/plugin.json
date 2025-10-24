@@ -1,0 +1,11 @@
+{
+    "id": "dev/rss-feed",
+    "name": "Rss Feed",
+    "namespace": "Dev\\RssFeed\\",
+    "provider": "Dev\\RssFeed\\Providers\\RssFeedServiceProvider",
+    "author": "Laravel Technologies",
+    "url": "mailto:toan@visualweber.com",
+    "version": "1.1.5",
+    "description": "RSS is a web feed that allows users and applications to access updates to websites in a standardized, computer-readable format.",
+    "minimum_core_version": "7.3.0"
+}

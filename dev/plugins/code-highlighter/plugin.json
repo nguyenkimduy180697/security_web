@@ -1,0 +1,11 @@
+{
+    "id": "dev/code-highlighter",
+    "name": "Code Highlighter",
+    "namespace": "Dev\\CodeHighlighter\\",
+    "provider": "Dev\\CodeHighlighter\\Providers\\CodeHighlighterServiceProvider",
+    "author": "Laravel Technologies",
+    "url": "mailto:toan@visualweber.com",
+    "version": "1.1.3",
+    "minimum_core_version": "7.4.0",
+    "description": "Code syntax highlighter"
+}

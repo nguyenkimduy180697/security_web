@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Mini Piano Game</title>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #dcdcdc;
+    }
+    canvas {
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const GAME_WIDTH = 400;
+    const GAME_HEIGHT = 600;
+    const TILE_WIDTH = GAME_WIDTH / 4;
+    const TILE_HEIGHT = 160;
+    const NUM_COLUMNS = 4;
+
+    const config = {
+      type: Phaser.AUTO,
+      scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH,
+        width: GAME_WIDTH,
+        height: GAME_HEIGHT
+      },
+      backgroundColor: '#ffffff',
+      scene: { preload, create, update },
+      physics: {
+        default: 'arcade',
+        arcade: { debug: false }
+      }
+    };
+
+    let game = new Phaser.Game(config);
+    let tiles = [];
+    let score = 0;
+    let scoreText;
+    let combo = 0;
+    let comboText;
+    let lastHitTime = 0;
+    let tileSpeed = 300; // bắt đầu đã nhanh hơn
+
+    function preload() {
+      this.load.audio('bgm', 'bgm.mp3');
+    }
+
+    function create() {
+      scoreText = this.add.text(10, 10, 'Score: 0', {
+        fontSize: '24px', fill: '#000', fontFamily: 'Arial'
+      });
+      comboText = this.add.text(10, 40, '', {
+        fontSize: '20px', fill: '#ff0000', fontFamily: 'Arial'
+      });
+
+      this.bgm = this.sound.add('bgm', { loop: true });
+      this.bgm.play();
+
+      this.input.on('pointerdown', pointer => {
+        const x = pointer.x;
+        const y = pointer.y;
+
+        const hitTile = tiles.find(t => t.getBounds().contains(x, y));
+        if (hitTile) {
+          tiles = tiles.filter(t => t !== hitTile);
+
+          const now = this.time.now;
+          combo = now - lastHitTime < 1000 ? combo + 1 : 1;
+          lastHitTime = now;
+
+          const points = 1 + Math.floor(combo / 5);
+          score += points;
+          scoreText.setText('Score: ' + score);
+
+          if (combo >= 2) {
+            comboText.setText('Combo x' + combo);
+            showComboEffect(this, pointer.x, pointer.y, combo);
+          } else {
+            comboText.setText('');
+          }
+
+          if (combo >= 10) {
+            this.cameras.main.shake(100, 0.005);
+            this.cameras.main.setBackgroundColor('#ffe680');
+            this.time.delayedCall(300, () => {
+              this.cameras.main.setBackgroundColor('#ffffff');
+            });
+          }
+
+          adjustMusicRate(this);
+
+          this.tweens.add({
+            targets: hitTile,
+            scaleX: 0,
+            scaleY: 0,
+            duration: 100,
+            onComplete: () => hitTile.destroy()
+          });
+        }
+      });
+
+      this.time.addEvent({
+        delay: 400, // nhanh hơn
+        callback: () => spawnTile(this),
+        loop: true
+      });
+    }
+
+    function spawnTile(scene) {
+      const tilesToSpawn = Phaser.Math.Between(1, 2); // ra 1-2 tile cùng lúc
+      for (let i = 0; i < tilesToSpawn; i++) {
+        const col = Phaser.Math.Between(0, NUM_COLUMNS - 1);
+        const x = col * TILE_WIDTH;
+
+        let adjustedSpeed = tileSpeed;
+        adjustedSpeed += Math.floor(score / 10) * 20; // tăng tốc theo điểm
+        if (combo >= 5) adjustedSpeed += 100;
+
+        const color = getTileColor();
+        const tile = scene.add.rectangle(x + TILE_WIDTH / 2, -TILE_HEIGHT / 2, TILE_WIDTH, TILE_HEIGHT, color);
+        scene.physics.add.existing(tile);
+        tile.body.setVelocityY(adjustedSpeed);
+        tiles.push(tile);
+      }
+    }
+
+    function getTileColor() {
+      if (combo >= 10) return 0xffcc00;
+      if (combo >= 5) return 0xff6600;
+      if (combo >= 3) return 0x3366ff;
+      return 0x000000;
+    }
+
+    function showComboEffect(scene, x, y, comboCount) {
+      const text = scene.add.text(x, y, 'Combo x' + comboCount, {
+        fontSize: '24px',
+        fill: '#ff6600',
+        fontStyle: 'bold',
+        fontFamily: 'Arial'
+      }).setOrigin(0.5);
+
+      scene.tweens.add({
+        targets: text,
+        y: y - 50,
+        alpha: 0,
+        duration: 600,
+        onComplete: () => text.destroy()
+      });
+    }
+
+    function adjustMusicRate(scene) {
+      if (!scene.bgm) return;
+      let rate = 1;
+      if (combo >= 15) rate = 1.5;
+      else if (combo >= 10) rate = 1.3;
+      else if (combo >= 5) rate = 1.1;
+      scene.bgm.setRate(rate);
+    }
+
+    function update() {
+      tiles = tiles.filter(tile => {
+        if (tile.y > GAME_HEIGHT + TILE_HEIGHT / 2) {
+          tile.destroy();
+          combo = 0;
+          comboText.setText('');
+          adjustMusicRate(this);
+          return false;
+        }
+        return true;
+      });
+    }
+  </script>
+</body>
+</html>

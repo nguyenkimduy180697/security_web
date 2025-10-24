@@ -1,0 +1,11 @@
+{
+    "id": "dev/pwa",
+    "name": "PWA Support",
+    "namespace": "Dev\\Pwa\\",
+    "provider": "Dev\\Pwa\\Providers\\PwaServiceProvider",
+    "author": "Laravel Technologies",
+    "url": "mailto:toan@visualweber.com",
+    "version": "1.0.3",
+    "description": "Progressive Web App (PWA) support for all themes",
+    "minimum_core_version": "7.3.0"
+}

@@ -1,0 +1,11 @@
+{
+    "id": "dev/google-maps-geocoding",
+    "name": "Google Maps Geocoding",
+    "namespace": "Dev\\GoogleMapsGeocoding\\",
+    "provider": "Dev\\GoogleMapsGeocoding\\Providers\\GoogleMapsGeocodingServiceProvider",
+    "author": "Laravel Technologies",
+    "url": "mailto:toan@visualweber.com",
+    "version": "1.0.2",
+    "description": "Automatically get latitude and longitude from Google Maps API when entering address in forms",
+    "minimum_core_version": "7.5.0"
+}

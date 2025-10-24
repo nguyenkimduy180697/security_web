@@ -1,0 +1,11 @@
+{
+    "id": "dev/wordpress-importer",
+    "name": "WordPress Importer",
+    "namespace": "Dev\\WordpressImporter\\",
+    "provider": "Dev\\WordpressImporter\\Providers\\WordpressImporterServiceProvider",
+    "author": "Laravel Technologies",
+    "url": "mailto:toan@visualweber.com",
+    "version": "1.5.7",
+    "description": "Import your WordPress posts, pages, categories, tags, users and WooCommerce products from the WP XML/CSV export file.",
+    "minimum_core_version": "7.3.1"
+}

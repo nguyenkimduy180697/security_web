@@ -1,0 +1,22 @@
+{
+    "name": "dev/barcode-generator",
+    "description": "Generate and print barcode labels for products & orders with support for multiple printer types",
+    "type": "plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Laravel Technologies",
+            "email": "contact@fsofts.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dev\\BarcodeGenerator\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -1,0 +1,11 @@
+{
+    "id": "dev/email-log",
+    "name": "Email Log",
+    "namespace": "Dev\\EmailLog\\",
+    "provider": "Dev\\EmailLog\\Providers\\EmailLogServiceProvider",
+    "author": "Laravel Technologies",
+    "url": "mailto:toan@visualweber.com",
+    "version": "1.0.5",
+    "description": "Provides a log of all outgoing emails.",
+    "minimum_core_version": "7.0.0"
+}

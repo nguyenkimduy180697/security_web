@@ -1,0 +1,11 @@
+{
+    "id": "dev/sms-gateway",
+    "name": "SMS Gateway",
+    "namespace": "Dev\\Sms\\",
+    "provider": "Dev\\Sms\\Providers\\SmsServiceProvider",
+    "author": "Laravel Technologies",
+    "url": "mailto:toan@visualweber.com",
+    "version": "1.0.5",
+    "description": "Integrates SMS gateway to send messages and verify phone numbers via OTP.",
+    "minimum_core_version": "7.3.0"
+}

@@ -1,0 +1,11 @@
+{
+    "id": "dev/captcha",
+    "name": "Captcha",
+    "namespace": "Dev\\Captcha\\",
+    "provider": "Dev\\Captcha\\Providers\\CaptchaServiceProvider",
+    "author": "Laravel Technologies",
+    "url": "mailto:toan@visualweber.com",
+    "version": "2.1.7",
+    "description": "Captcha for higher security",
+    "minimum_core_version": "7.3.0"
+}

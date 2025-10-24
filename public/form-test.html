@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css">
+    <title>Hello, world!</title>
+
+    <style>
+        body, html {
+            font-size: 14px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container my-4">
+        <h3>Đăng ký lái thử</h3>
+        <p>Để đăng ký lái thử, Quý khách cần cung cấp giấy phép lái xe cho Wuling</p>
+
+        <form class="mt-4">
+            <!-- <div class="form-group">
+                <label>Lựa chọn mẫu xe</label>
+                <select class="nice-select w-100">
+                    <option data-display="Select">Nothing</option>
+                    <option value="1">Some option</option>
+                    <option value="2">Another option</option>
+                    <option value="3" disabled>A disabled option</option>
+                    <option value="4">Potato</option>
+                </select>
+            </div> -->
+            <div class="form-group">
+                <label>Họ và tên khách hàng</label>
+                <input class="form-control" placeholder="Họ và tên khách hàng" />
+            </div>
+            <div class="form-group">
+                <label>Số điện thoại</label>
+                <input class="form-control" placeholder="Số điện thoại" />
+            </div>
+            <div class="form-group">
+                <label>Tỉnh thành</label>
+                <select class="form-control">
+                    <option>Tp.Hồ Chí Minh</option>
+                    <option>Hà nội</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Địa chỉ</label>
+                <input class="form-control" placeholder="Địa chỉ" />
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input class="form-control" placeholder="Email" />
+            </div>
+            <div class="form-group">
+                <label>Ghi yêu cầu khác của khách</label>
+                <textarea class="form-control" rows="4" placeholder="Ghi yêu cầu khác của khách"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Đăng ký ngay</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+
+    <script>
+        $(document).ready(function() {
+            $('.nice-select ').niceSelect();
+        });
+    </script>
+    <script>
+        var adSettings = {
+          accessToken:
+            "9c82b72c-0f5e-4688-8218-df8dcd760d90|ZnuSIyNKQr2jhDUW4NpdJAagw5pYt04359WWVOUvda588525",
+          uuid: "9c7ee1d4-61f6-4f75-b596-9398fece8173"
+        };
+        (function() {
+          const ACXConnectScript = document.createElement('script'); 
+          ACXConnectScript.type = 'text/javascript'; 
+          ACXConnectScript.async = true;
+          ACXConnectScript.src = 'http://localhost:8001/scripts/website/v3/connection.js?v=' + (new Date()).getTime();
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ACXConnectScript, s);
+        })();
+      </script>
+      
+  </body>
+</html>

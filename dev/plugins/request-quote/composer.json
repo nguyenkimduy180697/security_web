@@ -1,0 +1,11 @@
+{
+    "name": "dev/request-quote",
+    "description": "Request Quote plugin for Laravel CMS",
+    "type": "package",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Dev\\RequestQuote\\": "src/"
+        }
+    }
+}

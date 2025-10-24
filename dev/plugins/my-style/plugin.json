@@ -1,0 +1,10 @@
+{
+    "id": "dev/my-style",
+    "name": "MyStyle",
+    "namespace": "Dev\\MyStyle\\",
+    "provider": "Dev\\MyStyle\\Providers\\MyStyleServiceProvider",
+    "author": "Laravel Technologies",
+    "url": "mailto:toan@visualweber.com",
+    "version": "1.0.3",
+    "description": "Custom your article styles"
+}

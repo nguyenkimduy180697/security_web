@@ -1,0 +1,15 @@
+{
+    "name": "dev/sms-gateways",
+    "description": "Integrates SMS gateway to send messages and verify phone numbers via OTP.",
+    "type": "plugin",
+    "require": {
+        "twilio/sdk": "^8.2",
+        "vonage/client": "^4.0"
+    },
+    "authors": [
+        {
+            "name": "Laravel Technologies",
+            "email": "contact@fsofts.com"
+        }
+    ]
+}

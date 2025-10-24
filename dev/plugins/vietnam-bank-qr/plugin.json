@@ -1,0 +1,11 @@
+{
+    "id": "dev/vietnam-bank-qr",
+    "name": "Mã QR Chuyển Tiền Ngân Hàng Việt Nam",
+    "namespace": "Dev\\VietnamBankQr\\",
+    "provider": "Dev\\VietnamBankQr\\Providers\\VietnamBankQrServiceProvider",
+    "author": "Laravel Technologies",
+    "url": "mailto:toan@visualweber.com",
+    "version": "1.0.1",
+    "description": "Plugin này dùng để hiển thị mã QR chuyển tiền hay dùng phương thức chuyển khoản ngân hàng Việt Nam.",
+    "minimum_core_version": "7.0.5"
+}

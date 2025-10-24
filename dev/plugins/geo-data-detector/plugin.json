@@ -1,0 +1,11 @@
+{
+    "id": "dev/geo-data-detector",
+    "name": "Geo Data Detector",
+    "namespace": "Dev\\GeoDataDetector\\",
+    "provider": "Dev\\GeoDataDetector\\Providers\\GeoDataDetectorServiceProvider",
+    "author": "Laravel Technologies",
+    "url": "mailto:toan@visualweber.com",
+    "version": "1.0.1",
+    "description": "Auto detect user currency & language based on location (IP)",
+    "minimum_core_version": "7.3.0"
+}
