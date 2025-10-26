@@ -29,6 +29,7 @@ function pushToPath(path, type) {
     buildPaths.push(`${type}/${path === 'true' ? '*' : path}`)
 }
 
+
 const types = [
     {
         key: 'npm_config_theme',
@@ -62,4 +63,5 @@ if (! buildPaths.length) {
     buildPaths = ['*/*']
 }
 
-buildPaths.forEach(buildPath => glob.sync(`./dev/${buildPath}/webpack.mix.js`).forEach(item => require(__dirname + '/' + item)))
+// buildPaths.forEach(buildPath => glob.sync(`./dev/${buildPath}/webpack.mix.js`).forEach(item => require(__dirname + '/' + item)))
+require(__dirname + '/dev/plugins/language/webpack.mix.js');
