@@ -6,7 +6,7 @@
             <div class="col-lg-3 col-md-3 col-sm-6 col-12">
                 <aside class="widget widget--transparent widget__footer widget__about">
                     <div class="widget__header">
-                        <h3 class="widget__title">{{ __('About us') }}</h3>
+                        <h3 class="widget__title">{{ theme_option('about_us_title') }}</h3>
                     </div>
                     <div class="widget__content">
                         <p>{{ theme_option('site_description') }}</p>
