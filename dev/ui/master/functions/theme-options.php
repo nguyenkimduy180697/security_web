@@ -50,6 +50,20 @@ app('events')->listen(RenderingThemeOptionSettings::class, function (): void {
             ],
         ])
         ->setField([
+            'id' => 'headquarters',
+            'section_id' => 'opt-text-subsection-general',
+            'type' => 'text',
+            'label' => __('Headquarters'),
+            'attributes' => [
+                'name' => 'headquarters',
+                'value' => null,
+                'options' => [
+                    'class' => 'form-control',
+                    'data-counter' => 255,
+                ],
+            ],
+        ])
+        ->setField([
             'id' => 'site_description',
             'section_id' => 'opt-text-subsection-general',
             'type' => 'textarea',

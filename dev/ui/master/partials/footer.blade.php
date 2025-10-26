@@ -2,7 +2,7 @@
 <footer class="page-footer bg-dark pt-50">
     <div class="container">
         <div class="row">
-            @if (theme_option('address') || theme_option('website') || theme_option('contact_email') || theme_option('site_description'))
+            @if (theme_option('about_us_title'))
             <div class="col-lg-3 col-md-3 col-sm-6 col-12">
                 <aside class="widget widget--transparent widget__footer widget__about">
                     <div class="widget__header">
@@ -10,6 +10,18 @@
                     </div>
                     <div class="widget__content">
                         <p>{{ theme_option('site_description') }}</p>
+                    </div>
+                </aside>
+            </div>
+            @endif
+            {!! dynamic_sidebar('footer_sidebar') !!}
+            @if (theme_option('address') || theme_option('website') || theme_option('contact_email') || theme_option('site_description'))
+            <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                <aside class="widget widget--transparent widget__footer widget__about">
+                    <div class="widget__header">
+                        <h3 class="widget__title">{{ theme_option('headquarters') }}</h3>
+                    </div>
+                    <div class="widget__content">
                         <div class="person-detail">
                             @if ($address = theme_option('address'))
                                 <p>{!! BaseHelper::renderIcon('ti ti-home') !!} {{ $address }}</p>
@@ -25,7 +37,6 @@
                 </aside>
             </div>
             @endif
-            {!! dynamic_sidebar('footer_sidebar') !!}
         </div>
     </div>
     <div class="page-footer__bottom">
